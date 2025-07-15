@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import 'leaflet/dist/leaflet.css';
 import L from "leaflet";
 
-// @ts-ignore
+// @ts-expect-error
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconUrl: '/images/leaflet/marker-icon.png',
