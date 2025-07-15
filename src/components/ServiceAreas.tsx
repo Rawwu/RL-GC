@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import 'leaflet/dist/leaflet.css';
 import L from "leaflet";
+import type { LatLngTuple } from "leaflet";
 
 // @ts-expect-error: _getIconUrl is an internal property not exposed in typings, but needs to be deleted to customize marker icons
 delete L.Icon.Default.prototype._getIconUrl;
@@ -34,13 +35,18 @@ const Popup = dynamic(
 );
 
 export default function ServiceAreas() {
-  const locations = [
+  type Location = {
+    name: string;
+    coordinates: LatLngTuple;
+  };
+
+  const locations: Location[] = [
     { name: "Arlington", coordinates: [32.7376, -97.1109] },
     { name: "Fort Worth", coordinates: [32.75578, -97.3328] },
     { name: "Saginaw", coordinates: [32.8601, -97.3639] },
-    { name: "North Richland Hills", coordinates: [32.8379, -97.2273]},
-    { name: "Mansfield", coordinates: [32.56465, -97.1384]},
-    { name: "Haltom City", coordinates: [32.8060, -97.2696]}
+    { name: "North Richland Hills", coordinates: [32.8379, -97.2273] },
+    { name: "Mansfield", coordinates: [32.56465, -97.1384] },
+    { name: "Haltom City", coordinates: [32.8060, -97.2696] },
   ];
 
   return (
