@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import 'leaflet/dist/leaflet.css';
 import L from "leaflet";
 
-// @ts-expect-error
+// @ts-expect-error: _getIconUrl is an internal property not exposed in typings, but needs to be deleted to customize marker icons
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconUrl: '/images/leaflet/marker-icon.png',
