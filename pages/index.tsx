@@ -7,20 +7,20 @@ import Footer from '@/src/components/Footer';
 import dynamic from "next/dynamic";
 
 const ServiceAreas = dynamic(() => import('@/src/components/ServiceAreas'), {
-    ssr: false
+  ssr: false
 });
 
 export default function Home() {
-    return (
-        <div>
-            <Navbar />
-            <Hero />
-            <Services />
-            <ServiceAreas />
-            <Gallery />
-            <ContactForm />
-            <Footer />
-        </div>
-
-    );
+  return (
+    <div>
+      <Navbar />
+      <Hero />
+      <Services />
+      <ServiceAreas />
+      <Gallery />
+      {/* Testimonials — add once customer reviews are collected */}
+      <ContactForm />
+      <Footer />
+    </div>
+  );
 }
