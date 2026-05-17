@@ -1,0 +1,22 @@
+# Handle line endings automatically for text files
+* text=auto
+
+# Ensure all web and code assets use LF (standard for TypeScript ecosystems)
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Keep lock files consistent to prevent merge conflicts
+package-lock.json text eol=lf
+yarn.lock text eol=lf
+pnpm-lock.yaml text eol=lf
+
+# Denote binary files that Git must never modify
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
