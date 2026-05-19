@@ -33,6 +33,14 @@ const ADDITIONAL = [
   { icon: '🔧', title: 'Sprinkler Repair',        description: 'System inspections, head replacements, and leak fixes.' },
 ];
 
+const PROPERTIES = [
+  { icon: '🏠', title: 'Residential Homes',      desc: 'Single-family homes and private residences.' },
+  { icon: '🏢', title: 'Commercial Offices',     desc: 'Office buildings and business parks.' },
+  { icon: '🏪', title: 'Retail Spaces',          desc: 'Storefronts, strip malls, and shopping centers.' },
+  { icon: '🏘️', title: 'Apartment Communities', desc: 'Multi-unit residential and rental properties.' },
+  { icon: '🌾', title: 'Large Land Plots',       desc: 'Acreage, vacant lots, and open land.' },
+];
+
 const TRUST = [
   { stat: '25+',    label: 'Years of Experience'  },
   { stat: 'Free',   label: 'Estimates Always'     },
@@ -174,6 +182,31 @@ export default function ServicesPage() {
                   >
                     Get Estimate &rarr;
                   </Link>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Properties We Service */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <FadeIn>
+            <p className="text-xs font-semibold uppercase tracking-widest text-green-700 text-center mb-2">Who We Serve</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">Properties We Service</h2>
+            <div className="w-12 h-1 bg-green-700 mx-auto mb-4" />
+            <p className="text-center text-gray-500 max-w-xl mx-auto mb-10">
+              From single-family homes to large commercial properties &mdash; if it has a yard, we&apos;ve got it covered.
+            </p>
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {PROPERTIES.map(({ icon, title, desc }) => (
+              <FadeIn key={title}>
+                <div className="bg-white rounded-xl border-2 border-gray-100 p-6 text-center hover:border-green-700 hover:shadow-md transition-all duration-200 flex flex-col items-center h-full">
+                  <span className="text-4xl mb-3">{icon}</span>
+                  <h3 className="font-bold text-gray-900 mb-1">{title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
                 </div>
               </FadeIn>
             ))}
