@@ -40,9 +40,7 @@ export default function Hero() {
 
         {/* Trust signals */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center text-sm text-gray-300">
-          <span>&#10003;&nbsp; Licensed &amp; Insured</span>
           <span>&#10003;&nbsp; Free Estimates</span>
-          <span>&#10003;&nbsp; 5&#9733; Rated Service</span>
         </div>
       </div>
     </section>

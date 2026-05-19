@@ -17,7 +17,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-6">
           <a href="tel:8174567068" className="text-green-800 font-semibold hover:text-green-600 transition">
             (817) 456-7068
           </a>
@@ -35,7 +35,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8"
+          className="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -47,7 +47,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4">
+        <div className="lg:hidden bg-white border-t border-gray-100 px-4 pb-4">
           <a href="tel:8174567068" className="block py-3 text-green-800 font-semibold border-b border-gray-100">
             (817) 456-7068
           </a>
