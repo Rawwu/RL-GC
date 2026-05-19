@@ -9,12 +9,12 @@ export default function Navbar() {
     <nav className="bg-white sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo slot — swap the initials div for an <Image> when logo is ready */}
-        <div className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <div className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center shrink-0">
             <span className="text-white font-bold text-sm">RL</span>
           </div>
           <h1 className="text-xl font-bold text-green-900">Raul&apos;s Lawn &amp; Garden Co.</h1>
-        </div>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-6">
