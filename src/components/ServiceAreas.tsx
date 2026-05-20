@@ -65,7 +65,16 @@ export default function ServiceAreas() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Map */}
           <div className="h-96 rounded-xl overflow-hidden shadow-md">
-            <MapContainer center={[32.75578, -97.3328]} zoom={10} className="h-full">
+            <MapContainer
+              center={[32.75578, -97.3328]}
+              zoom={10}
+              className="h-full"
+              scrollWheelZoom={false}
+              dragging={false}
+              touchZoom={false}
+              doubleClickZoom={false}
+              zoomControl={false}
+            >
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               {locations.map((location, index) => (
                 <Marker key={index} position={location.coordinates}>
