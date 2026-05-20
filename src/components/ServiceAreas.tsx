@@ -64,7 +64,7 @@ export default function ServiceAreas() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Map */}
-          <div className="h-96 rounded-xl overflow-hidden shadow-md">
+          <div className="h-96 rounded-xl overflow-hidden shadow-md isolate">
             <MapContainer
               center={[32.75578, -97.3328]}
               zoom={10}
