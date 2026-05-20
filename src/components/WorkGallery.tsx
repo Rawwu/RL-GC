@@ -4,22 +4,40 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const PHOTOS = [
-  { src: '/images/work1.jpg', service: 'Lawn Care',    location: 'Fort Worth, TX',        caption: 'Weekly lawn maintenance with edging and cleanup' },
-  { src: '/images/work2.jpg', service: 'Flower Beds',  location: 'Arlington, TX',          caption: 'Seasonal flower bed installation and mulching' },
-  { src: '/images/work3.jpg', service: 'Tree & Shrub', location: 'Saginaw, TX',            caption: 'Tree trimming and shrub shaping' },
-  { src: '/images/work1.jpg', service: 'Lawn Care',    location: 'Keller, TX',             caption: 'Lawn striping and fertilization treatment' },
-  { src: '/images/work2.jpg', service: 'Clean-up',     location: 'Hurst, TX',              caption: 'Full yard seasonal clean-up and debris removal' },
-  { src: '/images/work3.jpg', service: 'Flower Beds',  location: 'Euless, TX',             caption: 'Custom raised flower bed with native plants' },
-  { src: '/images/work1.jpg', service: 'Lawn Care',    location: 'Bedford, TX',            caption: 'Aeration and overseeding service' },
-  { src: '/images/work2.jpg', service: 'Tree & Shrub', location: 'North Richland Hills, TX', caption: 'Ornamental tree pruning and shaping' },
-  { src: '/images/work3.jpg', service: 'Clean-up',     location: 'Watauga, TX',            caption: 'Spring yard clean-up and leaf removal' },
-  { src: '/images/work1.jpg', service: 'Clean-up',     location: 'Keller, TX',             caption: 'Yard debris and brush removal service' },
-  { src: '/images/work1.jpg', service: 'Lawn Care',    location: 'Richland Hills, TX',     caption: 'Mowing, edging, and blowing service' },
-  { src: '/images/work2.jpg', service: 'Flower Beds',  location: 'Colleyville, TX',        caption: 'Annual flower bed refresh and weed control' },
-  { src: '/images/work3.jpg', service: 'Tree & Shrub', location: 'Grapevine, TX',          caption: 'Large shrub trimming and hedge shaping' },
+  // Lawn Care
+  { src: '/images/Front-lawn-1.jpg', service: 'Lawn Care',    location: 'Fort Worth, TX',           caption: 'Lawn maintenance with edging and cleanup' },
+  { src: '/images/Front-lawn-2.jpg', service: 'Lawn Care',    location: 'Arlington, TX',            caption: 'Front lawn mowing and edging service' },
+  { src: '/images/Front-lawn-3.jpg', service: 'Lawn Care',    location: 'Arlington, TX',            caption: 'Weekly lawn care with blowing and cleanup' },
+  { src: '/images/Front-lawn-4.jpg', service: 'Lawn Care',    location: 'North Richland Hills, TX', caption: 'Residential lawn mowing and edging' },
+  { src: '/images/Office-lawn-1.jpg', service: 'Lawn Care',   location: 'Mansfield, TX',            caption: 'Commercial property lawn maintenance' },
+  // Flower Beds
+  { src: '/images/Flowerbed-1.jpg', service: 'Flower Beds',   location: 'Arlington, TX',            caption: 'Flower bed cleanup and flower planting' },
+  { src: '/images/Flowerbed-2.jpg', service: 'Flower Beds',   location: 'Fort Worth, TX',           caption: 'Seasonal flower bed mulch refresh' },
+  { src: '/images/Flowerbed-3.jpg', service: 'Flower Beds',   location: 'Saginaw, TX',              caption: 'Flower bed installation and mulching' },
+  { src: '/images/Flowerbed-4.jpg', service: 'Flower Beds',   location: 'Mansfield, TX',            caption: 'Flower bed cleanup and mulch application' },
+  { src: '/images/Flowerbed-5.jpg', service: 'Flower Beds',   location: 'Arlington, TX',            caption: 'Flower bed installation and tilling' },
+  // Tree & Shrub
+  { src: '/images/Trimming-1.jpg',  service: 'Tree & Shrub',  location: 'Arlington, TX',            caption: 'Shrub trimming and edging service' },
+  { src: '/images/Trimming-2.jpg',  service: 'Tree & Shrub',  location: 'Fort Worth, TX',           caption: 'Shrub shaping and pruning' },
+  { src: '/images/Tree-trim-1.jpg', service: 'Tree & Shrub',  location: 'Mansfield, TX',            caption: 'Tree trimming and canopy cleanup' },
+  { src: '/images/tree-care-hp.jpg', service: 'Tree & Shrub', location: 'Arlington, TX',            caption: 'Tree and shrub care service' },
+  // Clean-up
+  { src: '/images/Leaves-1.jpg',    service: 'Clean-up',      location: 'Arlington, TX',            caption: 'Fall leaf removal and yard cleanup' },
+  { src: '/images/Leaves-2.jpg',    service: 'Clean-up',      location: 'Fort Worth, TX',           caption: 'Seasonal leaf removal service' },
+  { src: '/images/Leaves-3.jpg',    service: 'Clean-up',      location: 'North Richland Hills, TX', caption: 'Fall yard cleanup and debris removal' },
+  { src: '/images/Leaves-4.jpg',    service: 'Clean-up',      location: 'Saginaw, TX',              caption: 'Leaf blowing and yard clean-up' },
+  { src: '/images/Leaves-5.jpg',    service: 'Clean-up',      location: 'Mansfield, TX',            caption: 'Pre-winter yard cleanup and leaf removal' },
+  // Sod
+  { src: '/images/Sod-1.jpg',       service: 'Sod',           location: 'Arlington, TX',            caption: 'Sod installation on residential lawn' },
+  { src: '/images/Sod-5.jpg',       service: 'Sod',           location: 'Arlington, TX',            caption: 'Tilling before sod installment' },
+  { src: '/images/Sod-7.jpg',       service: 'Sod',           location: 'Arlington, TX',            caption: 'New lawn sod installation' },
+  { src: '/images/Sod-8.jpg',       service: 'Sod',           location: 'Arlington, TX',            caption: 'Sod replacement' },
+  { src: '/images/Sod-2.jpg',       service: 'Sod',           location: 'Arlington, TX',            caption: 'New sod laying — front yard' },
+  { src: '/images/Sod-3.jpg',       service: 'Sod',           location: 'Arlington, TX',            caption: 'Front yard sod installation' },
+  { src: '/images/Sod-4.jpg',       service: 'Sod',           location: 'Arlington, TX',            caption: 'Full lawn sod replacement' },
 ];
 
-const CATEGORIES = ['All', 'Lawn Care', 'Flower Beds', 'Tree & Shrub', 'Clean-up'];
+const CATEGORIES = ['All', 'Lawn Care', 'Flower Beds', 'Tree & Shrub', 'Clean-up', 'Sod'];
 const PAGE_SIZE = 9;
 
 export default function WorkGallery() {
