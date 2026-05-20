@@ -9,18 +9,21 @@ const FEATURED = [
     description: 'Keep your lawn looking its best year-round with our reliable mowing, edging, and blowing service. We work around your schedule so your yard is always ready.',
     bullets: ['No contracts required', 'Edging & blowing included', 'Year-round availability'],
     badge: 'Most Popular',
+    image: '/images/Front-lawn-2.jpg',
   },
   {
     title: 'Tree & Shrub Care',
     description: 'Expert trimming and shaping to keep your trees and shrubs healthy, safe, and looking sharp. We handle everything from small ornamentals to large overgrowth.',
     bullets: ['Expert pruning & shaping', 'Storm prep & cleanup', 'All tree & shrub sizes'],
     badge: null,
+    image: '/images/Trimming-2.jpg',
   },
   {
     title: 'Garden Maintenance',
     description: 'Beautiful flower beds and garden areas require consistent care. We handle weeding, edging, seasonal planting, and mulch refresh to keep them thriving.',
     bullets: ['Weed control & edging', 'Seasonal planting', 'Mulch refresh'],
     badge: null,
+    image: '/images/Flowerbed-2.jpg',
   },
 ];
 
@@ -129,7 +132,7 @@ export default function ServicesPage() {
                   )}
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
-                      src="/images/house_lawn.jpg"
+                      src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover"
                     />
