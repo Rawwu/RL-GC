@@ -28,9 +28,9 @@ export default function Gallery() {
         </FadeIn>
 
         <Swiper
-          pagination={{ clickable: true }}
+          pagination={{ clickable: true, el: '#gallery-pagination' }}
           modules={[Pagination, Autoplay]}
-          className="mySwiper pb-10"
+          className="mySwiper"
           autoplay={{ delay: 3000, disableOnInteraction: false }}
         >
           {images.map((image, index) => (
@@ -52,6 +52,7 @@ export default function Gallery() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div id="gallery-pagination" className="flex justify-center mt-4" />
 
         <div className="text-center mt-6">
           <Link href="/work">
