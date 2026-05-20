@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const PHOTOS = [
@@ -125,11 +126,12 @@ export default function WorkGallery() {
                 className="relative aspect-[4/3] group cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
                 onClick={() => setLightboxIndex(idx)}
               >
-                <img
+                <Image
+                  fill
                   src={photo.src}
                   alt={`${photo.service} in ${photo.location} — ${photo.caption}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                 />
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-green-800 bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 flex flex-col justify-end p-4">
@@ -205,11 +207,15 @@ export default function WorkGallery() {
               ✕
             </button>
 
-            <img
-              src={currentPhoto.src}
-              alt={`${currentPhoto.service} in ${currentPhoto.location}`}
-              className="w-full rounded-xl max-h-[72vh] object-contain"
-            />
+            <div className="relative w-full aspect-[4/3]">
+              <Image
+                fill
+                src={currentPhoto.src}
+                alt={`${currentPhoto.service} in ${currentPhoto.location}`}
+                className="object-contain rounded-xl"
+                sizes="(max-width: 896px) 100vw, 896px"
+              />
+            </div>
 
             <div className="mt-4 text-center">
               <span className="text-xs font-semibold uppercase tracking-widest text-green-400">

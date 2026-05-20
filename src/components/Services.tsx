@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import FadeIn from './FadeIn';
 
@@ -36,12 +37,16 @@ export default function Services() {
                 key={index}
                 className="bg-white rounded-xl shadow-md overflow-hidden text-center text-black hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-48 object-cover"
-                  style={{ objectPosition: service.objectPosition }}
-                />
+                <div className="relative w-full h-48">
+                  <Image
+                    fill
+                    src={service.image}
+                    alt={service.title}
+                    className="object-cover"
+                    style={{ objectPosition: service.objectPosition }}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
                 <div className="p-6">
                   <div className="w-12 h-1 bg-green-700 rounded mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>

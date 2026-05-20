@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import FadeIn from './FadeIn';
 
@@ -130,11 +131,13 @@ export default function ServicesPage() {
                       {service.badge}
                     </span>
                   )}
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      fill
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover"
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-1">

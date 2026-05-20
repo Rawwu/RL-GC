@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "./FadeIn";
 
@@ -35,11 +36,13 @@ export default function Gallery() {
           {images.map((image, index) => (
             <SwiperSlide key={index}>
               <div className="flex justify-center px-2">
-                <div className="relative w-full max-w-4xl">
-                  <img
+                <div className="relative w-full max-w-4xl h-96">
+                  <Image
+                    fill
                     src={image.src}
                     alt={`Work ${index + 1}`}
-                    className="w-full h-96 object-cover rounded-xl shadow-lg"
+                    className="object-cover rounded-xl shadow-lg"
+                    sizes="(max-width: 896px) 100vw, 896px"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white py-3 px-5 rounded-b-xl">
                     <p className="text-sm font-medium">{image.caption}</p>

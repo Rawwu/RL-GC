@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import FadeIn from './FadeIn';
 
@@ -45,11 +46,15 @@ export default function AboutPage() {
 
             {/* Right — photo */}
             <FadeIn>
-              <img
-                src="/images/About-1.jpg"
-                alt="Raul's Lawn & Garden Co. — professional lawn care in Fort Worth, TX"
-                className="w-full rounded-2xl shadow-lg aspect-[4/3] object-cover"
-              />
+              <div className="relative w-full aspect-[4/3] rounded-2xl shadow-lg overflow-hidden">
+                <Image
+                  fill
+                  src="/images/About-1.jpg"
+                  alt="Raul's Lawn & Garden Co. — professional lawn care in Fort Worth, TX"
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </FadeIn>
 
           </div>
@@ -140,11 +145,15 @@ export default function AboutPage() {
 
             {/* Right — photo */}
             <FadeIn>
-              <img
-                src="/images/About-2.jpg"
-                alt="Raul's team providing professional landscaping services in Fort Worth"
-                className="w-full rounded-2xl shadow-lg aspect-[4/3] object-cover"
-              />
+              <div className="relative w-full aspect-[4/3] rounded-2xl shadow-lg overflow-hidden">
+                <Image
+                  fill
+                  src="/images/About-2.jpg"
+                  alt="Raul's team providing professional landscaping services in Fort Worth"
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </FadeIn>
 
           </div>
@@ -156,10 +165,12 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
-              <img
+              <Image
                 src="/images/Meet-Raul.jpg"
                 alt="Raul — Founder of Raul's Lawn & Garden Co."
-                className="w-40 h-40 rounded-full object-cover mx-auto shadow-lg mb-6"
+                width={160}
+                height={160}
+                className="rounded-full object-cover mx-auto shadow-lg mb-6"
                 style={{ objectPosition: 'center 20%' }}
               />
               <p className="text-xs font-semibold uppercase tracking-widest text-green-700 mb-2">The Person Behind It All</p>
