@@ -6,17 +6,20 @@ export default function Services() {
     {
       title: "Weekly Lawn Care",
       description: "We keep your lawn clean and trim week after week, so you never have to think about it.",
-      image: "/images/house_lawn.jpg",
+      image: "/images/lawn-care-hp.jpg",
+      objectPosition: "center",
     },
     {
       title: "Flower Beds",
       description: "We maintain your garden clean and plant any additional plants to keep it looking its best.",
-      image: "/images/house_lawn.jpg",
+      image: "/images/Flowerbed-1.jpg",
+      objectPosition: "center",
     },
     {
       title: "Tree & Shrub Care",
       description: "We maintain trees of any size clean, trim, and healthy. We can shape shrubs of any kind.",
-      image: "/images/house_lawn.jpg",
+      image: "/images/tree-care-hp.jpg",
+      objectPosition: "center",
     },
   ];
 
@@ -37,6 +40,7 @@ export default function Services() {
                   src={service.image}
                   alt={service.title}
                   className="w-full h-48 object-cover"
+                  style={{ objectPosition: service.objectPosition }}
                 />
                 <div className="p-6">
                   <div className="w-12 h-1 bg-green-700 rounded mx-auto mb-4" />

@@ -41,6 +41,8 @@ export default function Hero() {
         {/* Trust signals */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center text-sm text-gray-300">
           <span>&#10003;&nbsp; Free Estimates</span>
+          <span>&#10003;&nbsp; Family Owned</span>
+          <span>&#10003;&nbsp; 25+ Years of Experience</span>
         </div>
       </div>
     </section>

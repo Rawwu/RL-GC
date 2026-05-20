@@ -9,9 +9,14 @@ import FadeIn from "./FadeIn";
 
 export default function Gallery() {
   const images = [
-    { src: "/images/work1.jpg", caption: "Lawn Care — Fort Worth, TX" },
-    { src: "/images/work2.jpg", caption: "Garden Maintenance — Arlington, TX" },
-    { src: "/images/work3.jpg", caption: "Tree & Shrub Care — Saginaw, TX" },
+    { src: "/images/Front-lawn-1.jpg",  caption: "Lawn Maintenance — Fort Worth, TX" },
+    { src: "/images/Tree-trim-1.jpg",   caption: "Tree Trimming — Mansfield, TX" },
+    { src: "/images/Front-lawn-3.jpg",  caption: "Weekly Lawn Care — Arlington, TX" },
+    { src: "/images/Office-lawn-1.jpg", caption: "Commercial Property — Mansfield, TX" },
+    { src: "/images/Trimming-1.jpg",    caption: "Shrub & Edging Service — Arlington, TX" },
+    { src: "/images/Sod-1.jpg",         caption: "Sod Installation — Arlington, TX" },
+    { src: "/images/Front-lawn-4.jpg",  caption: "Residential Lawn Care — North Richland Hills, TX" },
+    { src: "/images/Fertilizer-1.jpg",  caption: "Fertilizer Application — Arlington, TX" },
   ];
 
   return (
