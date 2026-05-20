@@ -45,9 +45,8 @@ export default function AboutPage() {
 
             {/* Right — photo */}
             <FadeIn>
-              {/* Replace with a real property/team photo when available */}
               <img
-                src="/images/house_lawn.jpg"
+                src="/images/About-1.jpg"
                 alt="Raul's Lawn & Garden Co. — professional lawn care in Fort Worth, TX"
                 className="w-full rounded-2xl shadow-lg aspect-[4/3] object-cover"
               />
@@ -142,7 +141,7 @@ export default function AboutPage() {
             {/* Right — photo */}
             <FadeIn>
               <img
-                src="/images/work1.jpg"
+                src="/images/About-2.jpg"
                 alt="Raul's team providing professional landscaping services in Fort Worth"
                 className="w-full rounded-2xl shadow-lg aspect-[4/3] object-cover"
               />
@@ -157,11 +156,11 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
-              {/* Replace with Raul's actual photo when available */}
               <img
-                src="/images/house_lawn.jpg"
+                src="/images/Meet-Raul.jpg"
                 alt="Raul — Founder of Raul's Lawn & Garden Co."
                 className="w-40 h-40 rounded-full object-cover mx-auto shadow-lg mb-6"
+                style={{ objectPosition: 'center 20%' }}
               />
               <p className="text-xs font-semibold uppercase tracking-widest text-green-700 mb-2">The Person Behind It All</p>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Raul</h2>
@@ -173,7 +172,7 @@ export default function AboutPage() {
                 very first lawn he ever cut, and it&apos;s still true today.
               </p>
               <p className="text-green-800 font-semibold italic text-lg">
-                &ldquo;You won&apos;t find anyone who does a better job.&rdquo;
+                &ldquo;They are honest, dedicated & dependable and have been in the business a long time. Many others in our neighborhood feel the same way about them.&rdquo;
               </p>
               <p className="text-gray-400 text-sm mt-1">— What our customers say</p>
             </div>
