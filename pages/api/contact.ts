@@ -8,20 +8,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { services, name, phone, email, zip, message } = req.body;
+  const { name, email, phone, service, message } = req.body;
 
   try {
     await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: 'raulmtzjr7@gmail.com',
-      subject: `New Estimate Request from ${name}`,
+      subject: `New RL&G Message from ${name}`,
       html: `
-        <h2>New Estimate Request</h2>
+        <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Zip Code:</strong> ${zip}</p>
-        <p><strong>Services Requested:</strong> ${(services as string[]).join(', ')}</p>
+        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+        ${service ? `<p><strong>Service Needed:</strong> ${service}</p>` : ''}
         ${message ? `<p><strong>Message:</strong> ${message}</p>` : ''}
       `,
     });

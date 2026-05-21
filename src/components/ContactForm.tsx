@@ -6,12 +6,25 @@ type Status = 'idle' | 'loading' | 'success' | 'error';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>('idle');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [service, setService] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    // TODO: wire up to form submission API
-    setTimeout(() => setStatus('success'), 1500);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, service, message }),
+      });
+      setStatus(res.ok ? 'success' : 'error');
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -66,6 +79,8 @@ export default function ContactForm() {
                     <label className="block text-gray-700 font-semibold mb-1">Your Name</label>
                     <input
                       type="text"
+                      value={name}
+                      onChange={e => setName(e.target.value)}
                       placeholder="John Doe"
                       required
                       className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
@@ -75,6 +90,8 @@ export default function ContactForm() {
                     <label className="block text-gray-700 font-semibold mb-1">Email</label>
                     <input
                       type="email"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
                       placeholder="john@example.com"
                       required
                       className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
@@ -84,6 +101,8 @@ export default function ContactForm() {
                     <label className="block text-gray-700 font-semibold mb-1">Phone</label>
                     <input
                       type="tel"
+                      value={phone}
+                      onChange={e => setPhone(e.target.value)}
                       placeholder="(817) 000-0000"
                       className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
                     />
@@ -91,20 +110,26 @@ export default function ContactForm() {
                   <div>
                     <label className="block text-gray-700 font-semibold mb-1">Service Needed</label>
                     <select
+                      value={service}
+                      onChange={e => setService(e.target.value)}
                       required
-                      defaultValue=""
                       className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-gray-700"
                     >
                       <option value="" disabled>Select a service...</option>
-                      <option value="lawn-care">Weekly Lawn Care</option>
-                      <option value="flower-beds">Flower Beds</option>
-                      <option value="tree-shrub">Tree &amp; Shrub Care</option>
-                      <option value="other">Other</option>
+                      <option value="Weekly Lawn Care">Weekly Lawn Care</option>
+                      <option value="Flower Beds">Flower Beds</option>
+                      <option value="Tree & Shrub Care">Tree &amp; Shrub Care</option>
+                      <option value="Sod Laying">Sod Laying</option>
+                      <option value="Fall Clean Up">Fall Clean Up</option>
+                      <option value="Fertilizer Application">Fertilizer Application</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-gray-700 font-semibold mb-1">Message</label>
                     <textarea
+                      value={message}
+                      onChange={e => setMessage(e.target.value)}
                       placeholder="Tell us about your project..."
                       rows={3}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
